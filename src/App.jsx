@@ -1,11 +1,21 @@
-import Header from './components/Header.jsx';
-import Main from './components/Main.jsx';
+import { useState } from 'react'
+import Header from './components/Header.jsx'
+import Ingredients from './components/Ingredients.jsx'
+import Recipe from './components/Recipe.jsx'
 
 function App() {
+  const [ingredients, setIngredients] = useState([])
+
   return (
     <>
       <Header />
-      <Main />
+      <div className="Main">
+        <Ingredients 
+          ingredients={ingredients} 
+          setIngredients={setIngredients} 
+        />
+        <Recipe ingredients={ingredients} />
+      </div>
     </>
   )
 }
